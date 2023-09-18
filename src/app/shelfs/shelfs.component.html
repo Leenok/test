@@ -1,0 +1,13 @@
+<div class="rack"  *ngFor="let first of this.viewRacks; let i = index;">
+  <p>Стелаж {{i+1}} </p>
+  <div class="shelf" *ngFor="let second of this.viewRacks[i]; let ind = index;">
+    <p>Полка {{ind+1}} </p> 
+      <div class="cell" *ngFor="let third of this.viewRacks[i][ind];  let innd = index; " (mouseover)="show($event)" (mouseleave)="hide($event)">
+            <div class="noVisible list" >
+              <li *ngFor="let prod of this.viewRacks[i][ind][innd];" >
+                  {{prod}}
+              </li>
+            </div> 
+      </div>
+    </div>
+</div> 
